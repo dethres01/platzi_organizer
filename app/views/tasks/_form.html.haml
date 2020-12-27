@@ -9,5 +9,10 @@
     = f.input :due_date, label: t('.due_date')
     = f.association :category, label: t('.category')
 
+    #addParticipants
+      = f.simple_fields_for :participating_users do |g|
+        = render 'participating_user_fields', f: g
+      .links
+        = link_to_add_association 'add participant', f, :participating_users, 'data-turbolinks'=> false
   .form-actions
     = f.button :submit
