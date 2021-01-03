@@ -36,6 +36,7 @@ class Task < ApplicationRecord
     self.code = "#{owner_id}#{Time.now.to_i.to_s(36)}#{SecureRandom.hex(8)}"
   end
   def send_email
+    return unless Rails.env.development?
     (participants+[owner]).each do |user|
       ParticipantMailer.with(user: user, task: self).new_task_email.deliver!
     end
