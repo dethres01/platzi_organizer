@@ -12,7 +12,7 @@
         %li.nav-item
           =link_to "Sign Out", destroy_user_session_path, class: 'nav-link', :method => :delete, :data => { :confirm => 'Are you sure?' }
         %li.nav-item
-          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+          =link_to "Edit Profile", edit_user_registration_path, class: 'nav-link'
     -else
       %ul.navbar-nav
         %li.nav-item.active

@@ -1,0 +1,16 @@
+.card
+  %h2.text-center Log in
+  .card-body
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email,required: false,autofocus: true,input_html: { autocomplete: "email" }, placeholder: 'email@example.com'
+        %br 
+        = f.input :password, required: false, input_html: { autocomplete: "current-password" }, placeholder: "*******"
+        %br
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        %br
+      .form-actions.container
+        .row
+          .col.text-center
+            = f.button :submit, "Log in", class: 'btn btn-primary text-center'
+= render "devise/shared/links"
