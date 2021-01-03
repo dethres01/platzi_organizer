@@ -21,17 +21,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'hamlit'
-
-gem 'simple_form'
-gem 'annotate'
-gem 'rails-i18n'
-gem 'devise'
-gem 'cocoon'
-gem 'cancancan'
+gem 'hamlit' #sintaxis bonita para rails, funciona en conjunto con hamlit-rails abajo
+#gem 'hamlit-rails'
+gem 'simple_form' #Herramienta que nos ayuda a crear forms mas facil
+gem 'annotate' #QoL gem, ayuda a tener una mejor vista de nuestra estructura en nuestros modelos
+gem 'rails-i18n' #Gema que ayuda a la internacionalizacion de nuestra pagina
+gem 'devise' #Gema de control de sesiones
+gem 'cocoon' #Gema que ayuda y permite los forms anidados, ocupa js shenanigans
+gem 'cancancan' #To-see
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -40,6 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
   gem 'pry-doc'
+  gem 'letter_opener'
 end
 
 group :development do
