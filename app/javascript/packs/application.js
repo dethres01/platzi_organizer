@@ -9,10 +9,23 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("@nathanvda/cocoon")
-import "bootstrap"
-import "roboto-fontface"
 
-import "../assets/stylesheets/application"
+import "roboto-fontface"
+import "bootstrap"
+import "../stylesheets/application"
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+});
+//import "../assets/stylesheets/application"
 //import 'cocoon'
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -14,7 +14,14 @@ es:
       name: Nombre
     new_category: Nueva Categoría
   common:
+    are_you_sure: ¿Está seguro?
     back: Regresar
+    destroy: Eliminar
+    edit: Editar
+    show: Mostrar
+  errors:
+    messages:
+      not_saved: Not saved
   hello: Hola Mundo
   task:
     errors:

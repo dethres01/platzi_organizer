@@ -14,7 +14,14 @@ en:
       name: Name
     new_category: New Category
   common:
+    are_you_sure: Are you sure
     back: Back
+    destroy: Destroy
+    edit: Edit
+    show: Show
+  errors:
+    messages:
+      not_saved: Not saved
   hello: Hello world
   task:
     errors:
