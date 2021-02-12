@@ -5,9 +5,7 @@
   #navbarNavDropdown.collapse.navbar-collapse
     %ul.navbar-nav
       %li.nav-item.active
-        %a.nav-link{ href: root_path } 
-          Inicio
-          %span.sr-only (current)
+        %a.nav-link{ href: root_path } Inicio
       %li.nav-item
         %a.nav-link{ href: categories_path } Categorías
   = link_to 'Crear Tarea', new_task_path, class: 'btn btn-light ml-2'
