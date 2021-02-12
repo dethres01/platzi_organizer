@@ -29,6 +29,7 @@ gem 'rails-i18n' #Gema que ayuda a la internacionalizacion de nuestra pagina
 gem 'devise' #Gema de control de sesiones
 gem 'cocoon' #Gema que ayuda y permite los forms anidados, ocupa js shenanigans
 gem 'cancancan' #To-see
+gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
