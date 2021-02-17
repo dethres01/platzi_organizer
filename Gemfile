@@ -6,7 +6,8 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'mongoid'
+#gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -24,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'hamlit' #sintaxis bonita para rails, funciona en conjunto con hamlit-rails abajo
 #gem 'hamlit-rails'
 gem 'simple_form' #Herramienta que nos ayuda a crear forms mas facil
-gem 'annotate' #QoL gem, ayuda a tener una mejor vista de nuestra estructura en nuestros modelos
+#gem 'annotate' #QoL gem, ayuda a tener una mejor vista de nuestra estructura en nuestros modelos
 gem 'rails-i18n' #Gema que ayuda a la internacionalizacion de nuestra pagina
 gem 'devise' #Gema de control de sesiones
 gem 'cocoon' #Gema que ayuda y permite los forms anidados, ocupa js shenanigans
