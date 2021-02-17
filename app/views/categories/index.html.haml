@@ -2,6 +2,7 @@
   .card
     .card-body
       %h1 Lista de Categorías
+
       %table.table
         %thead
           %tr
@@ -10,7 +11,8 @@
             %th
             %th
             %th
-          %tbody
+
+        %tbody
           - @categories.each do |category|
             %tr
               %td= category.name
@@ -18,6 +20,7 @@
               %td= link_to t('common.show'), category
               %td= link_to t('common.edit'), edit_category_path(category)
               %td= link_to t('common.destroy'), category, :method => :delete, :data => { :confirm => t('common.are_you_sure') }
-          %br
-          .text-right
-          = link_to 'Nueva Categoría', new_category_path, class: 'btn btn-info'
+
+      %br
+      .text-right
+        = link_to 'Nueva Categoría', new_category_path, class: 'btn btn-info'

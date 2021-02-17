@@ -1,4 +1,3 @@
-
 .category.show-page
   .card
     .card-body
@@ -8,6 +7,7 @@
       %p
         %b Descripción:
         = @category.description
+
       = link_to t('common.edit'), edit_category_path(@category), class: 'btn-interaction'
       \|
       = link_to t('common.back'), categories_path, class: 'btn-interaction'
