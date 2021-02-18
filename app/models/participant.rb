@@ -1,11 +1,9 @@
-
 class Participant
-  include  Mongoid::Document
-  include  Mongoid::Timestamps
-
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
   ROLES = {
-    responsible: 1, 
+    responsible: 1,
     follower: 2
   }
 
