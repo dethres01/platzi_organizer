@@ -29,7 +29,7 @@ gem 'simple_form' #Herramienta que nos ayuda a crear forms mas facil
 gem 'rails-i18n' #Gema que ayuda a la internacionalizacion de nuestra pagina
 gem 'devise' #Gema de control de sesiones
 gem 'cocoon' #Gema que ayuda y permite los forms anidados, ocupa js shenanigans
-gem 'cancancan' #To-see
+gem 'cancancan','~> 3.1.0' #To-see
 gem 'font-awesome-sass'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
