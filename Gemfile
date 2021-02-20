@@ -44,7 +44,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  
+
 end
 
 group :development do
@@ -53,7 +53,7 @@ group :development do
   gem 'hamlit-rails'
 end
 group :test do
-  gem 'database_cleaner'
+  gem 'database_cleaner','~> 1.8.5'
   gem 'faker'
   gem 'capybara'
 

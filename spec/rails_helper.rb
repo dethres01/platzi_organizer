@@ -44,10 +44,11 @@ RSpec.configure do |config|
     DatabaseCleaner.orm = 'mongoid'
     DatabaseCleaner.clean
   end
+
   config.before(:each) do
     DatabaseCleaner.start
-    
   end
+
   config.after(:each) do
     DatabaseCleaner.clean
   end
