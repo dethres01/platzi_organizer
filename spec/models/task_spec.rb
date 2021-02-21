@@ -2,6 +2,38 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
+  describe 'Model Structure' do
+    describe 'It should be a Mongo document' do
+      it { is_expected.to be_mongoid_document }
+      it { is_expected.to have_timestamps }
+      describe 'It should have fields' do
+        it { is_expected.to have_field(:name).of_type(String)}
+        it { is_expected.to have_field(:description).of_type(String)}
+        it { is_expected.to have_field(:due_date).of_type(Date)}
+        it { is_expected.to have_field(:code).of_type(String)}
+      end
+      context 'Associations' do
+        context 'It should belong to' do
+          it { is_expected.to belong_to(:category)}
+          it { is_expected.to belong_to(:owner).of_type(User)}
+        end
+        context 'It should have many' do
+          it { is_expected.to have_many(:participating_users).of_type(Participant) }
+          it {is_expected.to have_many :notes}
+        end
+      end
+      context 'Validations' do
+        context 'presence' do
+          it { is_expected.to validate_presence_of(:name) }
+          it { is_expected.to validate_presence_of(:description) }
+          it { is_expected.to validate_presence_of(:participating_users) }
+        end
+        context 'uniqueness' do
+          it { is_expected.to validate_uniqueness_of(:name) }
+        end
+      end
+    end
+  end
   describe '#save' do
     let(:participants_count) { 4 }
     subject(:task) { build(:task_with_participants, participants_count: participants_count) }
