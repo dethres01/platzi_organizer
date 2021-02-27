@@ -41,7 +41,8 @@ RSpec.configure do |config|
   config.include Mongoid::Matchers, type: :model
   config.include Warden::Test::Helpers
   config.include Devise::Test::ControllerHelpers, type: 'controller'
-
+  config.include Devise::Test::IntegrationHelpers, type: 'request'
+  config.include Devise::Test::IntegrationHelpers, type: 'system'
   config.before(:suite) do
     DatabaseCleaner.orm = 'mongoid'
     DatabaseCleaner.clean
@@ -54,7 +55,13 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+  config.before(:each, type: :system) do
+    driven_by(:rack_test)
+  end
+  config.before(:each, type: :system,js: true) do
 
+    driven_by(:selenium_headless)
+  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
