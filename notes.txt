@@ -7,3 +7,6 @@ Agile/ITIL
 -> Rails Platzi
   -> Docker
   -> Git
+
+
+->Selenium?
