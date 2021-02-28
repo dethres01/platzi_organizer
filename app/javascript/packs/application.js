@@ -14,7 +14,7 @@ require("@nathanvda/cocoon")
 
 import "roboto-fontface"
 
-
+import "../src/javascripts/main"
 
 //import "../assets/stylesheets/application"
 //import 'cocoon'
