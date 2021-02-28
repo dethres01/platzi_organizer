@@ -11,7 +11,7 @@ require("channels")
 require("jquery")
 require("@nathanvda/cocoon")
 
-
+import "selectize"
 import "roboto-fontface"
 
 import "../src/javascripts/main"
