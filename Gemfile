@@ -31,6 +31,7 @@ gem 'devise' #Gema de control de sesiones
 gem 'cocoon' #Gema que ayuda y permite los forms anidados, ocupa js shenanigans
 gem 'cancancan','~> 3.1.0' #To-see
 gem 'font-awesome-sass'
+gem 'sucker_punch'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
