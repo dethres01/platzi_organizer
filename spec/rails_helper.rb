@@ -60,7 +60,9 @@ RSpec.configure do |config|
   end
   config.before(:each, type: :system,js: true) do
 
-    driven_by(:selenium_headless)
+    driven_by(:selenium_headless) #headless browser
+    #gecko
+    #USR/BIN
   end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

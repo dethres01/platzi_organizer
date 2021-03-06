@@ -19,6 +19,7 @@ RSpec.describe "Tasks", type: :system do
     end
     it 'Creates a new task',js:true do
       visit '/tasks/new'
+      #Capybara
       fill_in('task[name]', with: 'Tarea Capybara 1')
       fill_in('task[due_date]', with: Date.today+5.days)
       fill_in('task[description]', with: 'descripcion Tarea Capybara 1')

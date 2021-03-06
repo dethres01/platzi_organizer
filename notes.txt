@@ -1,7 +1,8 @@
 para correr el server de mongodb
 "C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="c:\data\db"
 
-Agile/ITIL
+-> Agile
+/ITIL
 
 
 -> Rails Platzi
@@ -10,3 +11,5 @@ Agile/ITIL
 
 
 ->Selenium?
+-> octa
+-> PuppetLabs
