@@ -14,11 +14,14 @@
 class Task
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AASM
 
   field :name, type: String
   field :description, type: String
   field :due_date, type: Date
   field :code, type: String
+  field :status, type: String
+  field :transitions, type: Array, default: []
 
   belongs_to :category
   belongs_to :owner, class_name: 'User'
@@ -35,11 +38,34 @@ class Task
 
   before_create :create_code
   accepts_nested_attributes_for :participating_users,allow_destroy: true
+  
+  aasm column: :status do
+    state :pending, initial: true
+    state :in_process, :finished
+    after_all_transitions :audit_status_change
 
+    event :start do
+      transitions from: :pending, to: :in_process
+    end
+
+    event :finish do
+      transitions from: :in_process, to: :finished
+    end
+  end
+  
   def participants
     participating_users.includes(:user).map(&:user)
   end
-
+  def audit_status_change
+    set transitions: transitions.push(
+      {
+        from_state: aasm.from_state,
+        to_state: aasm.to_state,
+        current_event: aasm.current_event,
+        timestamp: Time.zone.now
+      }
+    )
+  end
   def due_date_validity
     return if due_date.blank?
     return if due_date > Date.today

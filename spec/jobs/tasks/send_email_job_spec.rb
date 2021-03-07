@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Tasks::SendEmailJob, type: :job do
-  describe '#perform_async',focus: true do
+  describe '#perform_async' do
     let(:task_id) {'1'}
     it 'sends email' do
       task = class_double('Task').as_stubbed_const
